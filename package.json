@@ -1,6 +1,6 @@
 {
   "name": "redstone-code",
-  "displayName": "redstone-code",
+  "displayName": "Redstone",
   "description": "Java Language Support with Redstone",
   "version": "0.0.1",
   "engines": {
@@ -17,7 +17,17 @@
         "command": "redstone-code.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "redstone",
+      "properties": {
+        "redstone.server.path": {
+          "type": "string",
+          "scope": "machine-overridable",
+          "markdownDescription": "Path to redstone executable"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -26,6 +36,9 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
+  },
+  "dependencies": {
+    "vscode-languageclient": "9.0.1"
   },
   "devDependencies": {
     "@types/vscode": "^1.75.0",
